@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 		i = 0;
 		lu = fread(buf,data_size,buf_size,fi);
 		while (lu > 0) {
-printf("1.1 avec %d alors que %d putain de %d(%c)\n",buf[0] + (i%n)*256, tab_size, buf[0], buf[0]);
+			if (buf[0] > 0)
 			tab[buf[0] + (i%n)*256 ] = tab[buf[0] + (i%n)*256 ] + 1;
-printf("1.2\n");
-			printf("%d\n",i);
+
+
 			i++;
 			lu = fread(buf,data_size,buf_size,fi);
 		}	

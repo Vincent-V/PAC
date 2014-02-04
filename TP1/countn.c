@@ -43,15 +43,14 @@ printf("2\n");
 	for (i = 0; i < 256; i++){
 		int j;
 		for (j = 0; j < n; j++){
-		if (tab[i+ (j*256)] != 0){
-			printf("[%3d] : %d\t", i, tab[i+ (j*256)]);
+			if (tab[i+ (j*256)] != 0){
+				printf("[%3d] : %d\t", i, tab[i+ (j*256)]);
+			}
+			else{
+				printf("[%3d] :   \t", i);
+			}
 		}
-		else{
-			printf("[%3d] :   \t", i);
-		}
-		
-}
-printf("\n");
+		printf("\n");
 	}
 	printf("\n");
   exit(0);

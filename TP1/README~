@@ -1,3 +1,38 @@
-cp1 : clef='+'
-cp2 : clef='simple'
-cp3 : clef='a)-12Fa)-12F'
+*** Q2 ***
+Voir le fichier count.c dans le repertoir racine
+
+*** Q3 ***
+Voir le fichier countn.c dans le repertoir racine
+
+*** Q4 ***
+Voir repertoir cryptogram1
+
+Avec une analyse statistique on repere que le caractere 11 de la table ascii (vertical tab) est le plus fréquent.
+Le caractere space (32) a surement été chiffré par vertical tab.
+
+Avec un xor on trouve que la clef est le caractere + (43).
+
+On peut dechifrer avec la commande : ./crypxor + cp1 dcp1
+
+
+*** Q5 ***
+Voir repertoir cryptogram2
+L'analyse de frequence ne donne pas de resultat comparable aux frequences du francais, c'est surement une substitution polyalphabétique
+
+*** Q6 ***
+Voir repertoir cryptogram2
+L'analyse de la commande xxd cp2 nous permet de voir la clef : 'simple'
+
+La commande ./crypxor simple cp2 dcp2 nous permet d'obtenir le source.
+
+
+*** Q7 ***
+Voir repertoir cryptogram3
+Apres compilation du fichier detcle.c
+On l'utilise pour trouver que la taille de la clef est 12
+
+Ensuite l'utilisation de countn.c nous permet de compter les caractere 12 par 12, les caractere les plus fréquent à chaque fois étant les numero 65-9-13-17-18-102-65-9-13-17-18-102 (de la table ascii)
+un xor dessus nous permet de trouver la clef : a)-12Fa)-12F
+
+L'execution de la commande : ./crypxor "a)-12Fa)-12F" cp3 dcp3 nous permet de retrouver le texte original.
+

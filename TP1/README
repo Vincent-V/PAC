@@ -36,3 +36,17 @@ un xor dessus nous permet de trouver la clef : a)-12Fa)-12F
 
 L'execution de la commande : ./crypxor "a)-12Fa)-12F" cp3 dcp3 nous permet de retrouver le texte original.
 
+*** Q8 ***
+Voir repertoire cryptogram4
+L'analyse de fréquence m'a permis de déterminer avec certitude le charactère espace ainsi que le 'e'
+L'espace (32 en decimal) par exemple était codé par un 'd' (100 en decimal), dans le fichier de substitution j'ai donc placé le nombre 100 à la 32eme ligne.
+Pareil pour le 'e' qui était substitué par le nombre 169.
+
+Cette première phase de déchiffrement m'a permis de cerner les différents mots. Je connaissais donc le nombre de lettres et de mots dans le titre de la nouvelle d'Alphonse Allais. J'ai donc compris qu'il sagissait de la nouvelle : "Un moyen comme un autre".
+
+Avec le texte original en clair, j'ai procédé comme avec l'espace et le 'e' pour obtenir le fichier de substitution.
+
+La commande : "./substitue -c cp4 dcp4 fichier_substitution" permet de déchiffer le cryptogramme. On fait ensuite : "vi dcp4" pour lire le fichier facilement.
+
+*** Q9 ***
+
