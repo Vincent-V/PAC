@@ -20,14 +20,14 @@ int main(int argc, char *argv[])
 	}
 
   if ((fi=fopen(argv[1],"rb"))!=NULL) {
-
+		int cpt = 0;
 		lu = fread(buf,data_size,buf_size,fi);
 		 while (lu > 0) {
 			tab[buf[0]] = tab[buf[0]] + 1;
 			lu = fread(buf,data_size,buf_size,fi);
-
+			cpt++;
 		}	
-
+		printf ("lu : %d\n", cpt);
 		fclose(fi);
   }
   else{

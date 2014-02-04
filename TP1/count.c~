@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 }
 	for (i = 0; i < 256; i++){
 		if (tab[i] != 0){
-		printf("[%c] : %d\n", i, tab[i]);
+		printf("[%3d (%c)] : %d\n", i,i, tab[i]);
 		}
 	}
   exit(0);
