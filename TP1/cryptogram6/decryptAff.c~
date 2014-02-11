@@ -27,19 +27,19 @@ int usage(char *progname) {
 int main(int argc, char *argv[])
 {
   FILE *fi,*fo;
-  char *cp;
-  char buf[buf_size];
+  unsigned char buf[buf_size];
   int lu, a, b;
-
+	int i = 0;
   if (argc!=5) usage(argv[0]) ;
 
   a = atoi(argv[1]);
-	b = atoi(argv[2]);
-
+  b = atoi(argv[2]);
   if ((fi=fopen(argv[3],"rb"))!=NULL) {
     if ((fo=fopen(argv[4],"wb"))!=NULL) {
       lu = fread(buf,data_size,buf_size,fi);
       while (lu > 0) {
+				i++;
+
 				buf[0] = ((buf[0]-b) * a )% 256;
 				fwrite(buf,data_size,buf_size,fo);
 				lu = fread(buf,data_size,buf_size,fi);
@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
     fclose(fi);
   }
   else exit(2);
-  
   exit(0);
 }
 
