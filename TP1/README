@@ -1,3 +1,8 @@
+Binome : Vidal Vincent - Romain Motuelle
+
+Avancement par question :
+
+
 *** Q2 ***
 Voir le fichier count.c dans le repertoir racine
 
@@ -48,8 +53,6 @@ Avec le texte original en clair, j'ai procédé comme avec l'espace et le 'e' po
 
 La commande : "./substitue -c cp4 dcp4 fichier_substitution" permet de déchiffer le cryptogramme. On fait ensuite : "vi dcp4" pour lire le fichier facilement.
 
-*** Q9 ***
-
 
 *** Q10***
 Un nombre peut etre inversé modulo 256 s'il n'est pas pair. Il reste donc 128 valeurs pour a et 256
@@ -64,17 +67,19 @@ Genere un fichier qui n'est pas visible(133 etant l'inverse modulo 256 de 77).
 Les calculs semblent correct mais nous n'avons pas compris pourquoi le fichier n'est pas bon
 
 *** Q12***
-Voir repertoir cryptogram7 (quelle logique !)
+Voir repertoir cryptogram7
 
-Pour celui il suffit de regarder quelques fichiers jpeg et on remarque la presence des caractere JFIF 
+Pour celui la il faut regarder quelques fichiers jpeg et on remarque la presence des caracteres JFIF 
 dans l'en-tete (caractere x4a x46 x49 x46), ensuite on regarde aux memes endroits dans le fichier caché
 et on obtien : x50 x94 xa1 x94 (le meme caractere revient deux fois, ça commence bien !)
 
-Ce qui nous permet d'obtenir deux trois equations differentes (deux pour resoudre et une pour verifier):
+Ce qui nous permet d'obtenir deux equations à deux inconnues pour trouver la clef :
 74a + b = 80
 70a + b = 148
 
 Apres résolution : a=-17 b=1338
 
-Il suffit finalement de dechiffrer avec ces clefs.
+Il suffit finalement de dechiffrer avec ces clefs. Mais ici même probleme qu'avec le fichier precedent, probleme pour dechifrer.
+
+FIN
 
