@@ -1,0 +1,1 @@
+Pour la Q2, on fait comme Q1 : on fait une collision avec la premiere page web. Puis on vient concatener la seconde page web sur les deux fichiers. (Penser à ajouter des espaces pour avoir une taille modulo 64)
