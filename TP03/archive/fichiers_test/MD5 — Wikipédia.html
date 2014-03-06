@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html dir="ltr" class="ve-available client-js" lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>MD5 — Wikipédia</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23wmf15">
+<link rel="alternate" type="application/x-wiki" title="Modifier" href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit">
+<link rel="edit" title="Modifier" href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit">
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://fr.wikipedia.org/w/opensearch_desc.php" title="Wikipédia (fr)">
+<link rel="EditURI" type="application/rsd+xml" href="http://fr.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de Wikipédia" href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Modifications_r%C3%A9centes&amp;feed=atom">
+<link rel="canonical" href="http://fr.wikipedia.org/wiki/MD5">
+<link rel="stylesheet" href="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load.css">
+<style>
+@media print{#centralNotice{display:none}}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:ddb0c98a055632ae8e349c9cf48ac703 */
+.tipsy{padding:5px;position:absolute;z-index:100000;cursor:default}.tipsy-inner{padding:5px 8px 4px 8px; background-color:#ffffff;border:solid 1px #a7d7f9;color:black;max-width:15em;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; }.tipsy-arrow{position:absolute;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALAgMAAADUwp+1AAAACVBMVEX5+fmn1/n///9s6BFKAAAAAXRSTlMAQObYZgAAACpJREFUCB1jZBD4wMiQMoeRcUU4I9uSaYxSE54xZjn8AtMgPkgcJA9UBwAeDw1Qrb3pVAAAAABJRU5ErkJggg==) no-repeat top left;background:url(//bits.wikimedia.org/static-1.23wmf15/resources/jquery.tipsy/images/tipsy.png?2014-02-20T16:50:00Z) no-repeat top left!ie;width:11px;height:6px} .tipsy-n .tipsy-arrow{top:0px;left:50%;margin-left:-5px} .tipsy-nw .tipsy-arrow{top:1px;left:10px} .tipsy-ne .tipsy-arrow{top:1px;right:10px} .tipsy-s .tipsy-arrow{bottom:0px;left:50%;margin-left:-5px;background-position:bottom left} .tipsy-sw .tipsy-arrow{bottom:0px;left:10px;background-position:bottom left} .tipsy-se .tipsy-arrow{bottom:0px;right:10px;background-position:bottom left} .tipsy-e .tipsy-arrow{top:50%;margin-top:-5px;right:1px;width:5px;height:11px;background-position:top right} .tipsy-w .tipsy-arrow{top:50%;margin-top:-5px;left:0px;width:6px;height:11px}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:4c0ad2434bc128d18de6fc4d2de65914 */
+.uls-menu a{cursor:pointer}.uls-menu.callout .caret-before{border-top:20px solid transparent;border-right:20px solid #C9C9C9;border-bottom:20px solid transparent;display:inline-block;left:-21px;top:30px;position:absolute}.uls-menu.callout .caret-after{border-top:20px solid transparent;border-right:20px solid #FCFCFC;border-bottom:20px solid transparent;display:inline-block;left:-20px;top:30px;position:absolute}.uls-ui-languages button{width:23%;text-overflow:ellipsis;margin-right:4%}button.uls-more-languages{width:auto}.settings-title{font-size:11pt}.settings-text{color:#555555;font-size:9pt}div.display-settings-block:hover .settings-text{color:#252525}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:22d1681fa868b4ff4fbcb1ec1e58a9ea */
+.mw-editsection{white-space:nowrap;padding-right:0.25em; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .mw-content-ltr .mw-editsection-expanded .mw-editsection-bracket:first-of-type,.mw-content-rtl .mw-editsection-expanded .mw-editsection-bracket:not(:first-of-type){margin-left:-0.25em;margin-right:0.25em;color:#555} .mw-content-rtl .mw-editsection-expanded .mw-editsection-bracket:first-of-type,.mw-content-ltr .mw-editsection-expanded .mw-editsection-bracket:not(:first-of-type){margin-right:-0.25em;margin-left:0.25em;color:#555}.ve-tabmessage-appendix{font-size:0.7em;vertical-align:top;line-height:1.43em;padding-left:0.5em; background-image:none !important;display:inline !important}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:10d5f32d441941e72673fc73cdfe14a9 */
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:0dcacc990dd02e7db9669ab3090b80f1 */
+.wbc-editpage{list-style:none none;text-align:right;padding-right:.5em !important}.wbc-editpage > a{padding-left:11px;background:no-repeat left center}.wbc-editpage > a:link,.wbc-editpage > a:visited{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAD1BMVEUZAAD///95eXmqqqrY2NjEIQ0cAAAAAXRSTlMAQObYZgAAACdJREFUCNdjYGBgYGIAASUFENNJCUiqmADZTM5OqExFFZAKRSG4YgBjcwODynSgDwAAAABJRU5ErkJggg==);background-image:url(//bits.wikimedia.org/static-1.23wmf15/extensions/Wikidata/extensions/Wikibase/client/resources/images/WBC-Asset-Pencil.png?2014-02-20T16:55:00Z)!ie;color:#797979 !important}.wbc-editpage > a:hover{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAD1BMVEWBAADY2Nj///8GRa0zZrtW2AECAAAAAXRSTlMAQObYZgAAACdJREFUCNdjYGBgYGYAAWMDEFPYGEgaOgLZzCLCqEwjQ5AKI2W4YgBg5QOTQPzBuAAAAABJRU5ErkJggg==);background-image:url(//bits.wikimedia.org/static-1.23wmf15/extensions/Wikidata/extensions/Wikibase/client/resources/images/WBC-Asset-Pencil-Hover.png?2014-02-20T16:55:00Z)!ie;color:#0645AD !important}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:0b8b2e867bea7b28608af9b44926050e */</style><style>
+.cite-accessibility-label{position:absolute !important; top:-99999px;clip:rect(1px 1px 1px 1px); clip:rect(1px,1px,1px,1px);padding:0 !important;border:0 !important;height:1px !important;width:1px !important;overflow:hidden}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:6989008023386f50501783f5c5ff5345 */
+.fr-collapsible-toggle{background:url(//upload.wikimedia.org/wikipedia/commons/1/10/MediaWiki_Vector_skin_action_arrow.png) no-repeat scroll left center transparent;padding:0 0 0 15px;cursor:pointer;float:right}.fr-collapsible-toggle-collapsed{background:url(//upload.wikimedia.org/wikipedia/commons/4/41/MediaWiki_Vector_skin_right_arrow.png) no-repeat scroll left center transparent}.fr-collapsible-toggle,.fr-collapsible-toggle-keyboard{outline:0 none}.fr-collapsible-toggle:focus,.fr-collapsible-toggle-keyboard:focus,.fr-collapsible-toggle:hover,.fr-collapsible-toggle-keyboard:hover{text-decoration:underline}.fr-collapsible span.up,.fr-collapsible span.down{color:#0645AD}.fr-collapsible-toggle-expanded span.up{display:none }.fr-collapsible-toggle-collapsed span.down{display:none } .fr-collapsible-group-toogle-all{font-size:12px;font-weight:normal} .toogleboxnew{border:1px solid #AAA;padding:2px 2px 0 2px;border-radius:3px}.toogleboxnew_title{background:#EFEFEF;margin:0 0 2px 0;text-align:center;font-weight:bold;padding:0 5em}.toogleboxnew .fr-collapsible-content{font-size:90%} .toogleboxnew .fr-collapsible-toggle,caption .fr-collapsible-toggle{font-size:0.9em;font-weight:normal;min-width:5em;text-align:left} table.fr-collapsible{min-width:80%}table.fr-collapsible.fr-enhanced-rc{min-width:0}table.fr-collapsible caption{background:#EFEFEF;border:1px solid #AAAAAA;border-radius:3px;margin-bottom:3px}  .lh ul,.lh li{margin:0;padding:0}.lh li{display:inline;white-space:nowrap} .lh ul ul{display:inline;white-space:normal}.lh li:after{content:" ·";font-weight:bold}.lh li:last-child:after{content:none} .lh li li:first-child:before,.lh li li:last-child:after{font-weight:normal}.lh li li:first-child:before{content:"("}.lh li li:last-child:after{content:")"} .ls ul{line-height:inherit;list-style:none none;margin:0}.ls ul li{margin-bottom:0} .palette{background:white;border:1px solid #aaa;margin:1em 0 0;padding:3px;font-size:89%}.palette .fr-collapsible-toggle{min-width:5em}.palette-modifier{float:left;padding:0.1em 0 0 1em}.palette-titre,.palette-section{font-size:105%;font-weight:bold;margin:0;padding:0.25em 6em 0.2em;text-align:center}.palette-banniere{margin:2px 0 0;padding:0.25em;text-align:center}.palette-titre{background:#ccccff}.palette-banniere,.palette-groupe,.palette-section{background:#ddddff}.palette-liste-fils .palette-groupe{background:#e6e6ff}.palette-liste-pair,.palette-liste-simple-pair{background:#f5f5f5}.palette-ligne-simple,.palette-groupe,.palette-liste,.palette-liste-pair{border-top:2px solid white}.palette-ligne{display:table-row}.palette-image,.palette-groupe,.palette-liste,.palette-liste-pair,.palette-liste-fils{display:table-cell;vertical-align:middle}.palette-groupe{border-right:2px solid white;font-weight:bold;padding:0.25em 1em;text-align:right;white-space:nowrap}.palette-liste,.palette-liste-pair,.palette-liste-fils{width:100%}.palette-liste-simple,.palette-liste-simple-pair{padding:0.25em 0;text-align:center}.palette ul,.palette li{margin:0;padding:0;list-style:none none}div.palette-image{padding:0.25em 0 0.25em 0.25em;width:1%}.palette-liste p,.palette-liste-pair p,.palette-liste-simple p,.palette-liste-simple-pair p,.palette-banniere p,.palette .lh ul{margin:0 0 0 0.25em}div.palette + div.palette{margin-top:-1px}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:428b62f7359a61f27628556a0cc8bc25 */
+#p-lang .uls-settings-trigger{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAgCAMAAAAVMLmlAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAALpQTFRF////W1tbgICAWVlZgICAUVFRgICAWVlZhYWFUlJShYWFVFRUgYGBVVVVgYGBVVVVgICAVFRUVVVVVlZWgYGBgICAVFRUgYGBVFRUgICAgYGBVVVVVVVVgYGBVlZWgYGBVFRUgICAVFRUgICAVVVVgICAVlZWgICAVFRUgICAVVVVgICAVFRUgICAVlZWgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICA9Fa9bgAAADx0Uk5TAA4OFBQWFhcXGRlJSUtLWlpbXV9fYGFhZGRlZmlpa2twcIiIioqPj5GRn5+goKGh6+vv7/Dw+fn8/P7+YuRUVgAAAOlJREFUGBmNwcdWAgEURMFLFCUaAcWAEhQYHBRmCN3//1u+BYcVC6s4p2U3OLrrVxN7Xn7uELoH5w65Dx1g6JNnoLazfz++VnZehkZir4pQ3NjzBg5TwtgBhzFh6kDr294UobiykxZc7ezVdLyx8yrw6pM+8GjnDjsf7gj3/WpiJ7Vhl6OW3eC/mlKdo5teZSHNSoM24XqvTCHTvg0MdDIASpn08/6ZSlkJ6jMpLUBhLc3qKEwIIwUURoSJAs2ltC5AIZUWTbjcSulktJayCvCikx7wJG0VttrfEp5eLpfS4uLtgaOmVOeMP8BAM9RClMO9AAAAAElFTkSuQmCC) no-repeat right top;background:transparent url(//bits.wikimedia.org/static-1.23wmf15/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.png?2014-02-20T16:55:00Z) no-repeat right top!ie;background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzMiI+PGRlZnM+PHBhdGggZD0iTTEzLjU4MiA2LjYzMmgtMS4wNjRjLS4xMzMtLjUzOC0uMzU0LTEuMDY1LS42NDUtMS41NTJsLjc1LS43NWMuMTY0LS4xNjQuMTY0LS40MjkgMC0uNTkzbC0xLjM1OS0xLjM2Yy0uMTY0LS4xNjQtLjQzLS4xNjQtLjU5NCAwbC0uNzUuNzVjLS40OS0uMjk0LTEuMDEyLS41MTItMS41NTEtLjY0NXYtMS4wNjRjMC0uMjMxLS4xODctLjQxOC0uNDE5LS40MThoLTEuOTE4Yy0uMjMxIDAtLjQxOC4xODctLjQxOC40MTh2MS4wNjNjLS41NDEuMTM1LTEuMDYyLjM1Mi0xLjU1Mi42NDZsLS43NS0uNzVjLS4xNjQtLjE2NC0uNDI5LS4xNjQtLjU5MyAwbC0xLjM2IDEuMzZjLS4xNjQuMTY0LS4xNjQuNDI5IDAgLjU5M2wuNzUuNzVjLS4yOTIuNDg4LS40OTQgMS4wMTUtLjYyNyAxLjU1MWgtMS4wNjRjLS4yMzEgMC0uNDE4LjE4Ny0uNDE4LjQxOXYxLjkxOGMwIC4yMzEuMTg3LjQxOC40MTguNDE4aDEuMDQ2Yy4xMzQuNTQyLjM1MSAxLjA2Mi42NDUgMS41NTFsLS43NS43NWMtLjE2NC4xNjQtLjE2NC40MjkgMCAuNTkzbDEuMzYgMS4zNmMuMTY0LjE2NC40MjkuMTY0LjU5MyAwbC43NS0uNzVjLjQ5MS4yOTYgMS4wMS40OTMgMS41NTEuNjI3djEuMDYzYy4wMDEuMjMzLjE4OC40Mi40MTkuNDJoMS45MThjLjIzMSAwIC40MTktLjE4Ny40MTktLjQxOHYtMS4wNjNjLjU0Mi0uMTM0IDEuMDYxLS4zMzMgMS41NTEtLjYyN2wuNzUuNzVjLjE2NC4xNjQuNDMuMTY0LjU5NCAwbDEuMzU5LTEuMzZjLjE2NC0uMTY0LjE2NC0uNDI5IDAtLjU5M2wtLjc1LS43NWMuMjk1LS40ODkuNTEtMS4wMTMuNjQ1LTEuNTUxaDEuMDY0Yy4yMy0uMDAyLjQxOC0uMTg5LjQxOC0uNDJ2LTEuOTE4YzAtLjIzMi0uMTg4LS40MTgtLjQxOC0uNDE4em0tNi41ODIgNC4wMTJjLTEuNDYxIDAtMi42NDUtMS4xODQtMi42NDUtMi42NDRzMS4xODQtMi42NDQgMi42NDUtMi42NDQgMi42NDUgMS4xODQgMi42NDUgMi42NDQtMS4xODQgMi42NDQtMi42NDUgMi42NDR6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjODA4MDgwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNikiIGZpbGw9IiM1NTUiLz48L3N2Zz4=);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.23wmf15/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.svg?2014-02-20T16:55:00Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzMiI+PGRlZnM+PHBhdGggZD0iTTEzLjU4MiA2LjYzMmgtMS4wNjRjLS4xMzMtLjUzOC0uMzU0LTEuMDY1LS42NDUtMS41NTJsLjc1LS43NWMuMTY0LS4xNjQuMTY0LS40MjkgMC0uNTkzbC0xLjM1OS0xLjM2Yy0uMTY0LS4xNjQtLjQzLS4xNjQtLjU5NCAwbC0uNzUuNzVjLS40OS0uMjk0LTEuMDEyLS41MTItMS41NTEtLjY0NXYtMS4wNjRjMC0uMjMxLS4xODctLjQxOC0uNDE5LS40MThoLTEuOTE4Yy0uMjMxIDAtLjQxOC4xODctLjQxOC40MTh2MS4wNjNjLS41NDEuMTM1LTEuMDYyLjM1Mi0xLjU1Mi42NDZsLS43NS0uNzVjLS4xNjQtLjE2NC0uNDI5LS4xNjQtLjU5MyAwbC0xLjM2IDEuMzZjLS4xNjQuMTY0LS4xNjQuNDI5IDAgLjU5M2wuNzUuNzVjLS4yOTIuNDg4LS40OTQgMS4wMTUtLjYyNyAxLjU1MWgtMS4wNjRjLS4yMzEgMC0uNDE4LjE4Ny0uNDE4LjQxOXYxLjkxOGMwIC4yMzEuMTg3LjQxOC40MTguNDE4aDEuMDQ2Yy4xMzQuNTQyLjM1MSAxLjA2Mi42NDUgMS41NTFsLS43NS43NWMtLjE2NC4xNjQtLjE2NC40MjkgMCAuNTkzbDEuMzYgMS4zNmMuMTY0LjE2NC40MjkuMTY0LjU5MyAwbC43NS0uNzVjLjQ5MS4yOTYgMS4wMS40OTMgMS41NTEuNjI3djEuMDYzYy4wMDEuMjMzLjE4OC40Mi40MTkuNDJoMS45MThjLjIzMSAwIC40MTktLjE4Ny40MTktLjQxOHYtMS4wNjNjLjU0Mi0uMTM0IDEuMDYxLS4zMzMgMS41NTEtLjYyN2wuNzUuNzVjLjE2NC4xNjQuNDMuMTY0LjU5NCAwbDEuMzU5LTEuMzZjLjE2NC0uMTY0LjE2NC0uNDI5IDAtLjU5M2wtLjc1LS43NWMuMjk1LS40ODkuNTEtMS4wMTMuNjQ1LTEuNTUxaDEuMDY0Yy4yMy0uMDAyLjQxOC0uMTg5LjQxOC0uNDJ2LTEuOTE4YzAtLjIzMi0uMTg4LS40MTgtLjQxOC0uNDE4em0tNi41ODIgNC4wMTJjLTEuNDYxIDAtMi42NDUtMS4xODQtMi42NDUtMi42NDRzMS4xODQtMi42NDQgMi42NDUtMi42NDQgMi42NDUgMS4xODQgMi42NDUgMi42NDQtMS4xODQgMi42NDQtMi42NDUgMi42NDR6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjODA4MDgwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNikiIGZpbGw9IiM1NTUiLz48L3N2Zz4=);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.23wmf15/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.svg?2014-02-20T16:55:00Z)!ie;height:16px;width:14px;float:right;cursor:pointer}.skin-vector #p-lang .uls-settings-trigger{ margin-top:3px}#p-lang .uls-settings-trigger:hover{background-position:right -16px}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:b2e67584e2228f57a20bd65b248df072 */
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none} caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:6c1d24e90626cec584f0869483f983e7 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */
+#wpTextbox1{margin:0;display:block}.editOptions{background-color:#F0F0F0;border:1px solid silver;border-top:none;padding:1em 1em 1.5em 1em;margin-bottom:2em} .editCheckboxes{margin-bottom:1em}.editCheckboxes input:first-child{margin-left:0}.cancelLink{margin-left:0.5em}#editpage-copywarn{font-size:0.9em}#wpSummary{display:block;margin-top:0;margin-bottom:0.5em}.editButtons input:first-child{margin-left:.1em}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:e34df406a683e66957f36176fe0072d5 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(//bits.wikimedia.org/static-1.23wmf15/resources/mediawiki.action/images/green-checkmark.png?2014-02-20T16:50:00Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:5434ecb18caf9027a04b9a419dea9a94 */
+#container{position:relative;min-height:100%}#container,video{width:100%;height:100%}#playerContainer{overflow:hidden;position:relative;height:100%;background:#000}#videoHolder{position:relative;overflow:hidden}.fullscreen #playerContainer{position:absolute !important;width:100% !important;height:100%! important;z-index:9999;min-height:100%;top:0;left:0;margin:0}.mwEmbedPlayer{width:100%;height:100%;overflow:hidden;position:absolute;top:0;left:0}.modal_editor{ left:10px;top:10px;right:10px;bottom:10px;position:fixed;z-index:100}.displayHTML a:visited{color:white}.loadingSpinner{width:32px;height:32px;display:block;padding:0px;background-image:url(//bits.wikimedia.org/static-1.23wmf15/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/loading_ani.gif?2014-02-20T16:53:20Z)}.mw-imported-resource{border:thin solid black}.kaltura-icon{background-image:url(//bits.wikimedia.org/static-1.23wmf15/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/kaltura_logo_sm_transparent.png?2014-02-20T16:53:20Z) !important;background-repeat:no-repeat;display:block;height:12px;width:12px;margin-top:2px !important;margin-left:3px !important}.mw-fullscreen-overlay{background:rgb(0,0,0) none repeat scroll 0% 0%;position:fixed;top:0pt;left:0pt;width:100%;height:100%;-moz-background-clip:border;-moz-background-origin:padding;-moz-background-inline-policy:continuous} .play-btn-large{width:70px;height:53px;background :url(//bits.wikimedia.org/static-1.23wmf15/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button.png?2014-02-20T16:53:20Z);position :absolute;cursor :pointer;border :none !important;z-index :1}.play-btn-large:hover{background :url(//bits.wikimedia.org/static-1.23wmf15/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button_hover.png?2014-02-20T16:53:20Z)}.carouselContainer{position :absolute;width :100%;z-index :2}.carouselVideoTitle{position :absolute;top :0px;left :0px;width :100%;background :rgba(0,0,0,0.8);color :white;font-size :small;font-weight :bold;z-index :2}.carouselVideoTitleText{display :block;padding :10px 10px 10px 20px}.carouselTitleDuration{position :absolute;top :0px;right :0px;padding :2px;background-color :#5A5A5A;color :#D9D9D9;font-size :smaller;z-index :2}.carouselImgTitle{position :absolute;width :100%;text-align :center;color :white;font-size :small;background :rgba(0,0,0,0.4)}.carouselImgDuration{position :absolute;top :2px;left :2px;background :rgba( 0,0,0,0.7 );color :white;padding :1px 6px;font-size :small}.carouselPrevButton,.carouselNextButton{display :block;position :absolute;bottom:23px}.carouselPrevButton{left :5px}.carouselNextButton{right:6px}.alert-container{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-image:linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-o-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-moz-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-webkit-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-ms-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.04,rgb(215,215,215)),color-stop(0.55,rgb(230,230,230)),color-stop(1,rgb(255,255,255)));margin:auto;position:absolute;top:0;left:0;right:0;bottom:0;max-width:80%;max-height:30%}.alert-title{background-color :#E6E6E6;padding :5px;border-bottom :1px solid #D1D1D1;font-weight :normal !important;font-size:14px !important;-webkit-border-top-left-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px }.alert-message{padding :5px;font-weight :normal !important;text-align:center;font-size:14px !important}.alert-buttons-container{text-align:center;padding-bottom:5px}.alert-button{background-color:#474747;color:white;-webkit-border-radius:.5em;-moz-border-radius:.5em;border-radius:.5em;padding:2px 10px;background-image:linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-o-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-moz-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-webkit-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-ms-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-webkit-gradient( linear,left bottom,left top,color-stop(0.04,rgb(25,25,25)),color-stop(0.55,rgb(47,47,47)),color-stop(0.68,rgb(71,71,71)) )}.alert-text{color :black !important}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:f69093366ac935d48348cf3c8e372581 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load_002.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: frwiki:resourceloader:filter:minify-css:7:06ebe4fffe895aa83d9f3697a665ff56 */</style>
+
+<script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load_002.php"></script><script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load_003.php"></script><style title="spinjs"></style>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MD5","wgTitle":"MD5","wgCurRevisionId":101841514,"wgRevisionId":101841514,"wgArticleId":1943,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Portail:Cryptologie/Articles liés","Portail:Sécurité informatique/Articles liés","Portail:Informatique/Articles liés","Portail:Sécurité de l'information/Articles liés","Algorithme de hachage"],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","janv","fév","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"],"wgRelevantPageName":"MD5","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"isPageWatched":false,"magnifyClipIconURL":"//bits.wikimedia.org/static-1.23wmf15/skins/common/images/magnify-clip.png","pageLanguageCode":"fr","pageLanguageDir":"ltr","svgMaxSize":2048},"wgGuidedTourHelpGuiderUrl":"Help:Visites guidées/guide","wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"français","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q185235"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"showhiddencats":false,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,
+"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"visualeditor-enable":1,"visualeditor-enable-experimental":0,"visualeditor-enable-mwmath":0,"visualeditor-betatempdisable":0,"echo-notify-show-link":true,"echo-show-alert":true,"echo-email-frequency":0,"echo-email-format":"html","echo-subscriptions-email-system":true,"echo-subscriptions-web-system":true,"echo-subscriptions-email-other":false,"echo-subscriptions-web-other":true,"echo-subscriptions-email-edit-user-talk":false,"echo-subscriptions-web-edit-user-talk":true,"echo-subscriptions-email-reverted":false,"echo-subscriptions-web-reverted":true,"echo-subscriptions-email-article-linked":false,"echo-subscriptions-web-article-linked":false,"echo-subscriptions-email-mention":false,"echo-subscriptions-web-mention":true,"echo-subscriptions-web-edit-thank":true,"echo-subscriptions-email-edit-thank":false,"gettingstarted-task-toolbar-show-intro":true,"uls-preferences":"","language":
+"fr","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs102":false,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs828":false,"searchNs829":false,"gadget-newCollapsible":1,"gadget-WikiMiniAtlas":1,"gadget-MonobookToolbarStandard":1,"variant":"fr"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: frwiki:resourceloader:filter:minify-js:7:9cd90a4a1b32d59e97e74a58bd4f93b5 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","wikibase.client.init","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script><script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load_005.php"></script><script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/checkLoggedIn" async=""></script>
+<script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/geoiplookup"></script><link rel="dns-prefetch" href="http://meta.wikimedia.org/"><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.23wmf15/skins/vector/csshover.min.htc")}</style><![endif]--><script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load.php" async=""></script><script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/index_002.php" async=""></script><script type="text/javascript" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/index.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-MD5 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<div id="siteNotice"><div class="cn-ToUAmendment" id="centralNotice"><style type="text/css">
+
+#centralNotice.collapsed #ChangeToU2014_v1_anononly {
+ display: none;
+}
+
+#ChangeToU2014_v1_anononly {
+ position: relative;
+ overflow: hidden;
+ background: url(//upload.wikimedia.org/wikipedia/commons/0/0d/Gray-gradient1.png) bottom repeat-x;
+ margin-bottom: 0.5em !important;
+ margin-top: 0.5em !important;
+ background-color:#FFFFFF;
+ border: solid 1px #aaaaaa; 
+ height:66px;
+}
+
+#ChangeToU2014_v1_anononly a.cn-full-banner-click {
+ display:block;
+ height:100%;
+ width:100%;
+ cursor: pointer;
+}
+
+
+#ChangeToU2014_v1_anononly-logo {
+ position: absolute;
+ top: 8px;
+ left: 15px;
+ background-image: url(//upload.wikimedia.org/wikipedia/commons/thumb/1/12/Wikimedia_logo_text_RGB.svg/50px-Wikimedia_logo_text_RGB.svg.png);
+ height: 50px;
+ width: 50px;
+ background-repeat: no-repeat;
+}
+
+#ChangeToU2014_v1_anononly #black-text {
+ font-size: 1.1em;
+ color: black;
+ padding: 0.5em 40px 0.4em 60px;
+ line-height: 1.3em;
+ text-align: center;
+ font-weight:bold;
+}
+
+
+#ChangeToU2014_v1_anononly div#cn-toggle-box {
+ position: absolute;
+ z-index: 98;
+ top: 2px;
+ right: 6px;
+}
+
+#ChangeToU2014_v1_anononly div#cn-translation-link {
+ position:absolute;
+ z-index:50;
+ bottom: 0px;
+ right: 6px;
+ font-size: 0.7em;
+}
+
+#ChangeToU2014_v1_anononly #calltoaction {
+ padding-top: 5px;
+ color: #0645ad;
+}
+
+#cn-translation-link a:link, 
+#cn-translation-link a:visited, 
+#cn-translation-link a:hover { 
+ color: black; 
+} 
+
+</style>
+
+<div id="ChangeToU2014_v1_anononly">
+
+  <a class="cn-full-banner-click" href="http://meta.wikimedia.org/wiki/Terms_of_use/Paid_contributions_amendment/fr" title="">
+<div id="ChangeToU2014_v1_anononly-logo"></div>
+    <div id="black-text">
+   La modification de nos Conditions d'utilisation: <br> Donnez votre avis sur une proposition d’amendement au sujet des contributions rémunérées non déclarées.
+     </div>
+  </a>
+ <div id="cn-toggle-box">
+  <a href="#" title="Close" onclick="mw.centralNotice.hideBanner();return false;"><img src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/CloseWindow19x19.png" alt="fermer" border="0"></a>  
+ </div>
+</div></div><!-- CentralNotice --></div>
+						<h1 id="firstHeading" class="firstHeading" lang="fr"><span dir="auto">MD5</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">Un article de Wikipédia, l'encyclopédie libre.</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="fr"><div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://commons.wikimedia.org/wiki/File:Md5_generalview.png" class="image"><img alt="" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/220px-Md5_generalview.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/38/Md5_generalview.png/330px-Md5_generalview.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/38/Md5_generalview.png/440px-Md5_generalview.png 2x" height="366" width="220"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://fr.wikipedia.org/wiki/Fichier:Md5_generalview.png" class="internal" title="Agrandir"><img src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/magnify-clip.png" alt="" height="11" width="15"></a></div>
+Vue générale de MD5</div>
+</div>
+</div>
+<p>L'algorithme <b>MD5</b>, pour <span class="lang-en" lang="en"><b>Message Digest 5</b></span>, est une <a href="http://fr.wikipedia.org/wiki/Fonction_de_hachage" title="Fonction de hachage">fonction de hachage</a> cryptographique qui permet d'obtenir l'empreinte numérique d'un fichier (on parle souvent de <i>message</i>). Il a été inventé par <a href="http://fr.wikipedia.org/wiki/Ronald_Rivest" title="Ronald Rivest">Ronald Rivest</a> en <a href="http://fr.wikipedia.org/wiki/1991_en_informatique" title="1991 en informatique">1991</a>.</p>
+<p>L'utilisation de cette fonction de hachage dans les signatures numériques peut conduire à de multiples scénarios d'attaque<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite_crochet">[</span>1<span class="cite_crochet">]</span></a></sup> et n'est plus considérée comme un composant fiable de l'<a href="http://fr.wikipedia.org/wiki/Infrastructure_%C3%A0_cl%C3%A9s_publiques" title="Infrastructure à clés publiques">infrastructure à clés publiques</a>.
+ Cependant dans le calcul de la «&nbsp;signature&nbsp;» d'un fichier il 
+reste plutôt fiable, même si l'on ne peut pas assurer qu'il y a <a href="http://fr.wikipedia.org/wiki/Unicit%C3%A9_%28math%C3%A9matiques%29" title="Unicité (mathématiques)">unicité</a> entre l'empreinte calculée et le fichier ou message source<sup id="cite_ref-pdf-collision_2-0" class="reference"><a href="#cite_note-pdf-collision-2"><span class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Sommaire</h2>
+<span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">masquer</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Historique"><span class="tocnumber">1</span> <span class="toctext">Historique</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Exemple"><span class="tocnumber">2</span> <span class="toctext">Exemple</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Cryptanalyse"><span class="tocnumber">3</span> <span class="toctext">Cryptanalyse</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Algorithme"><span class="tocnumber">4</span> <span class="toctext">Algorithme</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Notation"><span class="tocnumber">4.1</span> <span class="toctext">Notation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Pr.C3.A9paration_du_message"><span class="tocnumber">4.2</span> <span class="toctext">Préparation du message</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Boucle_principale"><span class="tocnumber">4.3</span> <span class="toctext">Boucle principale</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Pseudocode"><span class="tocnumber">5</span> <span class="toctext">Pseudocode</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Notes_et_r.C3.A9f.C3.A9rences"><span class="tocnumber">6</span> <span class="toctext">Notes et références</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Liens_externes"><span class="tocnumber">7</span> <span class="toctext">Liens externes</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Historique">Historique</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=1" title="Modifier la section : Historique" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=1" title="Modifier la section : Historique">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>MD5 (<span class="lang-en" lang="en"><i>Message Digest 5</i></span>) est une <a href="http://fr.wikipedia.org/wiki/Fonction_de_hachage" title="Fonction de hachage">fonction de hachage</a> cryptographique qui calcule, à partir d'un fichier numérique, son <i>empreinte numérique</i> (en l'occurrence une séquence de <span class="nowrap">128&nbsp;<a href="http://fr.wikipedia.org/wiki/Bit_%28informatique%29" title="Bit (informatique)" class="mw-redirect">bits</a></span>
+ ou 32 caractères en notation hexadécimale) avec une probabilité très 
+forte que deux fichiers différents donnent deux empreintes différentes.</p>
+<p>En 1991, <a href="http://fr.wikipedia.org/wiki/Ronald_Rivest" title="Ronald Rivest">Ronald Rivest</a> améliore l'architecture de <a href="http://fr.wikipedia.org/wiki/MD4" title="MD4">MD4</a> pour contrer des attaques potentielles qui seront confirmées plus tard par les travaux de <a href="http://fr.wikipedia.org/wiki/Hans_Dobbertin" title="Hans Dobbertin">Hans Dobbertin</a>.</p>
+<p>Cinq ans plus tard, en <a href="http://fr.wikipedia.org/wiki/1996_en_informatique" title="1996 en informatique">1996</a>, une faille qualifiée de «&nbsp;grave&nbsp;» (possibilité de créer des <a href="http://fr.wikipedia.org/wiki/Collision_%28cryptologie%29" title="Collision (cryptologie)" class="mw-redirect">collisions</a> à la demande) est découverte et indique que MD5 devrait être mis de côté au profit de fonctions plus robustes comme <a href="http://fr.wikipedia.org/wiki/SHA-1" title="SHA-1">SHA-1</a>.</p>
+<p>En <a href="http://fr.wikipedia.org/wiki/2004_en_informatique" title="2004 en informatique">2004</a>, une équipe chinoise découvre des <a href="http://fr.wikipedia.org/wiki/Collision_%28cryptologie%29" title="Collision (cryptologie)" class="mw-redirect">collisions</a>
+ complètes. MD5 n'est donc plus considéré comme sûr au sens 
+cryptographique. On suggère maintenant d'utiliser plutôt des algorithmes
+ tels que <a href="http://fr.wikipedia.org/wiki/SHA-256" title="SHA-256" class="mw-redirect">SHA-256</a>, <a href="http://fr.wikipedia.org/wiki/RIPEMD-160" title="RIPEMD-160">RIPEMD-160</a> ou <a href="http://fr.wikipedia.org/wiki/Whirlpool_%28algorithme%29" title="Whirlpool (algorithme)">Whirlpool</a>.</p>
+<p>Cependant, la fonction MD5 reste encore largement utilisée comme 
+outil de vérification lors des téléchargements et l'utilisateur peut 
+valider l'intégrité de la version téléchargée grâce à l'empreinte. Ceci 
+peut se faire avec un programme comme <i>md5sum</i> pour MD5 et <i>sha1sum</i> pour SHA-1.</p>
+<p>Comme toute fonction de hachage cryptographique, MD5 peut aussi être 
+utilisé pour calculer l'empreinte d'un mot de passe avec la présence 
+d'un <i><a href="http://fr.wikipedia.org/wiki/Salage_%28informatique%29" title="Salage (informatique)" class="mw-redirect">sel</a></i> permettant de ralentir une attaque par force brute. Cela a été le système employé dans <a href="http://fr.wikipedia.org/wiki/Linux" title="Linux">GNU/Linux</a>.
+ Ainsi, plutôt que de stocker les mots de passe dans un fichier, ce sont
+ leurs empreintes MD5 qui sont enregistrées, de sorte que quelqu'un qui 
+lirait ce fichier ne pourrait pas découvrir les mots de passe. La 
+commande <i>enable secret</i> des commutateurs et routeurs Cisco, 
+utilisait le hachage MD5 (5 pour indiquer MD5) pour stocker le mot de 
+passe du mode privilégié dans le fichier de configuration de 
+l'équipement. Les dernières versions d'IOS intègrent le hachage SHA256 
+(4 pour indiquer SHA256)<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite_crochet">[</span>3<span class="cite_crochet">]</span></a></sup>.</p>
+<p>Le programme <span class="lang-en" lang="en"><a href="http://fr.wikipedia.org/wiki/John_the_ripper" title="John the ripper" class="mw-redirect">John the ripper</a></span>
+ permet de casser (trouver une collision pour) les MD5 triviaux par 
+force brute. Il est incommode pour les clés longues, et ne fonctionne 
+pas toujours si elles contiennent des caractères nationaux spécifiques 
+(cela dépend en fait des dictionnaires utilisés).</p>
+<p>Les <i><a href="http://fr.wikipedia.org/wiki/Tables_arc-en-ciel" title="Tables arc-en-ciel" class="mw-redirect">tables arc-en-ciel</a></i>
+ (à accès direct, et qui font parfois plusieurs gigaoctets) permettent 
+de les craquer souvent en moins d'une seconde. Ces tables utilisent des 
+dictionnaires établis après plusieurs jours, mois ou années de calcul. 
+Ceux-ci ne contiennent pas la totalité des clés MD5 possibles, ni ne 
+sont destinés à un cassage par force brute (une empreinte comporte 128 
+bits, ce qui représente environ 400 sextillions (<img class="tex" alt="4.10^{38}" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/ba9d8ebb525dbe270373b8fd05dd8362.png">) de combinaisons), mais permettent par examen de l'empreinte d'éliminer de très grandes classes de combinaisons à <i>ne pas</i>
+ tester, ce qui accélère la recherche plusieurs milliards de fois. 
+L'efficacité des tables arc-en-ciel diminue si l'empreinte est calculée 
+avec un «&nbsp;sel&nbsp;».</p>
+<h2><span class="mw-headline" id="Exemple">Exemple</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=2" title="Modifier la section : Exemple" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=2" title="Modifier la section : Exemple">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Voici l'empreinte (appelée abusivement <i>signature</i>) obtenue sur une phrase&nbsp;:</p>
+<dl>
+<dd><tt>MD5("Wikipedia, l'encyclopedie libre et gratuite")</tt> = <tt>d6aa97d33d459ea3670056e737c99a3d</tt></dd>
+</dl>
+<p>En modifiant un caractère, cette empreinte change radicalement&nbsp;:</p>
+<dl>
+<dd><tt>MD5("Wikipedia, l'encyclopedie libre et gratuit<b>E</b>")</tt> = <tt>5da8aa7126701c9840f99f8e9fa54976</tt></dd>
+</dl>
+<p>Très concrètement, la vérification de l'empreinte ou <a href="http://fr.wikipedia.org/wiki/Somme_de_contr%C3%B4le" title="Somme de contrôle">somme de contrôle</a>
+ MD5 peut être réalisée de la façon suivante&nbsp;: lors du 
+téléchargement d'un programme, on note la série de caractères nommée 
+"Signature MD5" indiquée sur la page de téléchargement. Quand ce 
+téléchargement est terminé, on lance un utilitaire de calcul MD5 comme, 
+par exemple: <i>HashCalc</i> ou <i>md5sums</i>, qui indique entre autres
+ la somme de contrôle correspondant au fichier. Si les deux valeurs 
+correspondent, on peut alors raisonnablement considérer que le fichier 
+n'a pas été corrompu (volontairement ou non d'ailleurs). On constate 
+plusieurs fragilités dans ce processus&nbsp;: la page d'origine a pu 
+être modifiée, et l'utilitaire de calcul peut être <i>adapté</i> pour 
+fournir la signature attendue. C'est pourquoi il faut impérativement 
+utiliser un utilitaire provenant d'une source de confiance. Il est aussi
+ possible d'utiliser une <a href="http://fr.wikipedia.org/wiki/Extension_%28logiciel%29" title="Extension (logiciel)">extension</a> pour le navigateur <a href="http://fr.wikipedia.org/wiki/Mozilla_Firefox" title="Mozilla Firefox">Mozilla Firefox</a> comme <span class="lang-en" lang="en"><i>MD Hash tool</i></span><sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite_crochet">[</span>4<span class="cite_crochet">]</span></a></sup> afin d'automatiser ce contrôle.</p>
+<h2><span class="mw-headline" id="Cryptanalyse"><a href="http://fr.wikipedia.org/wiki/Cryptanalyse" title="Cryptanalyse">Cryptanalyse</a></span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=3" title="Modifier la section : Cryptanalyse" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=3" title="Modifier la section : Cryptanalyse">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>À ses débuts, la fonction MD5 était considérée comme sûre, mais au 
+cours du temps, des failles potentielles ont été découvertes dans son 
+fonctionnement et durant l'été 2004, il a été cassé par des chercheurs 
+chinois, <a href="http://fr.wikipedia.org/wiki/Xiaoyun_Wang" title="Xiaoyun Wang" class="mw-redirect">Xiaoyun Wang</a>, Dengguo Feng, <a href="http://fr.wikipedia.org/wiki/Xuejia_Lai" title="Xuejia Lai">Xuejia Lai</a> (co-inventeur du célèbre algorithme de chiffrement <a href="http://fr.wikipedia.org/wiki/International_Data_Encryption_Algorithm" title="International Data Encryption Algorithm">IDEA</a>)
+ et Hongbo Yu. Leur attaque a permis de découvrir une collision complète
+ (deux messages différents qui produisent la même empreinte) sans passer
+ par une méthode de type <a href="http://fr.wikipedia.org/wiki/Recherche_exhaustive" title="Recherche exhaustive">recherche exhaustive</a><sup id="cite_ref-pdf-collision_2-1" class="reference"><a href="#cite_note-pdf-collision-2"><span class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup><sup class="reference cite_virgule">,</sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite_crochet">[</span>5<span class="cite_crochet">]</span></a></sup>.</p>
+<p>Sur un système parallélisé, les calculs n'ont pris que quelques 
+heures. Le MD5 n'est donc plus considéré comme sûr, mais l'algorithme 
+développé par ces trois chercheurs concerne des collisions quelconques 
+et ne permet pas de réaliser une collision sur une empreinte spécifique,
+ c'est-à-dire réaliser un deuxième message, à partir de l'empreinte d'un
+ premier message, qui produirait la même empreinte. Un projet de calcul 
+distribué lancé en <time datetime="2004-03"><a href="http://fr.wikipedia.org/wiki/Mars_2004" title="Mars 2004">mars</a>&nbsp;<a href="http://fr.wikipedia.org/wiki/2004_en_informatique" title="2004 en informatique">2004</a></time>, <a href="http://fr.wikipedia.org/w/index.php?title=MD5CRK&amp;action=edit&amp;redlink=1" class="new" title="MD5CRK (page inexistante)">MD5CRK</a>, visait à découvrir une collision complète mais a été subitement arrêté après la découverte de l'équipe chinoise. La <a href="http://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9" title="Sécurité">sécurité</a>
+ du MD5 n'étant plus garantie selon sa définition cryptographique, les 
+spécialistes recommandent d'utiliser des fonctions de hachage plus 
+récentes comme le <a href="http://fr.wikipedia.org/wiki/SHA-256" title="SHA-256" class="mw-redirect">SHA-256</a>.</p>
+<p>On sait maintenant générer des collisions MD5 en moins d'une minute 
+lorsque les deux blocs en collisions sont «&nbsp;libres&nbsp;»<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite_crochet">[</span>6<span class="cite_crochet">]</span></a></sup>
+ . On peut aussi générer une infinité de collisions avec un texte T à 
+partir de deux messages M1 et M2 de même longueur qui sont en collision.
+ Il suffit de concaténer M1 et M2 avec T, tel que T1 = M1 + T et T2 = M2
+ + T, afin d'obtenir une collision complète entre T1 et T2. On ne peut 
+toutefois pas générer une signature particulière et la falsification de 
+documents reste un exercice difficile.</p>
+<p>Dès <a href="http://fr.wikipedia.org/wiki/2006_en_informatique" title="2006 en informatique">2006</a>, il est par exemple possible de créer des pages <a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="Hypertext Markup Language">HTML</a> aux contenus très différents et ayant pourtant le même MD5. La présence de <a href="http://fr.wikipedia.org/wiki/%C3%89l%C3%A9ment_meta" title="Élément meta">métacodes</a>
+ de «&nbsp;bourrage&nbsp;» placés en commentaires, visibles seulement 
+dans la source de la page web, trahit toutefois les pages modifiées pour
+ usurper le MD5 d'une autre. La supercherie peut donc être levée si on 
+examine les sources de la page en question.</p>
+<p>En <a href="http://fr.wikipedia.org/wiki/2008_en_informatique" title="2008 en informatique">2008</a>, le logiciel <a href="http://fr.wikipedia.org/w/index.php?title=BarWF&amp;action=edit&amp;redlink=1" class="new" title="BarWF (page inexistante)">BarWF</a><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite_crochet">[</span>7<span class="cite_crochet">]</span></a></sup> utilise les ressources des instructions SSE2 et des processeurs massivement parallèles d'une carte graphique (<a href="http://fr.wikipedia.org/wiki/Compute_Unified_Device_Architecture" title="Compute Unified Device Architecture">CUDA</a>) pour casser du MD5 en force brute à la vitesse annoncée de 350 millions de clés par seconde.</p>
+<h2><span class="mw-headline" id="Algorithme">Algorithme</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=4" title="Modifier la section : Algorithme" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=4" title="Modifier la section : Algorithme">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:302px;"><a href="http://commons.wikimedia.org/wiki/File:MD5.svg" class="image"><img alt="" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/300px-MD5.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d8/MD5.svg/450px-MD5.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d8/MD5.svg/600px-MD5.svg.png 2x" height="330" width="300"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://fr.wikipedia.org/wiki/Fichier:MD5.svg" class="internal" title="Agrandir"><img src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/magnify-clip.png" alt="" height="11" width="15"></a></div>
+Une opération de MD5. MD5 comprend 64 blocs de ce type, groupés en quatre tours de 16 opérations. <i>F</i> est une fonction non-linéaire, qui varie selon le tour. <i>M<small style="line-height:1.5em;font-size:80%"><sub>i</sub></small></i> symbolise un bloc de <span class="nowrap">32&nbsp;bits</span> provenant du message à hacher et <i>K<small style="line-height:1.5em;font-size:80%"><sub>i</sub></small></i> est une constante de <span class="nowrap">32&nbsp;bits</span>, différentes pour chaque opération.</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="Notation">Notation</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=5" title="Modifier la section : Notation" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=5" title="Modifier la section : Notation">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>&nbsp;[&lt;&lt;&lt;]<small style="line-height:1.5em;font-size:80%"><sub><i>s</i></sub></small> est une <a href="http://fr.wikipedia.org/wiki/D%C3%A9calage_circulaire" title="Décalage circulaire">rotation</a> de <i>s</i> bits vers la gauche, <i>s</i> varie pour chaque opération.</li>
+<li>&nbsp;[+] symbolise l'addition <a href="http://fr.wikipedia.org/wiki/Modulo_%28informatique%29" title="Modulo (informatique)" class="mw-redirect">modulo</a> 2<sup>32</sup>.</li>
+<li>&nbsp;<img class="tex" alt="\oplus, \wedge, \vee, \neg" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/d96277da48b2e8f86c7268f480a9e87c.png"> symbolisent respectivement les opérations booléennes <a href="http://fr.wikipedia.org/wiki/Fonction_OU_exclusif" title="Fonction OU exclusif">XOR</a>, <a href="http://fr.wikipedia.org/wiki/Fonction_ET" title="Fonction ET">AND</a>, <a href="http://fr.wikipedia.org/wiki/Fonction_OU" title="Fonction OU">OR</a> et <a href="http://fr.wikipedia.org/wiki/Fonction_NON" title="Fonction NON">NOT</a>.</li>
+</ul>
+<h3><span class="mw-headline" id="Pr.C3.A9paration_du_message">Préparation du message</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=6" title="Modifier la section : Préparation du message" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=6" title="Modifier la section : Préparation du message">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>MD5 travaille avec un message de taille variable et produit une empreinte de <span class="nowrap">128&nbsp;bits</span>. Le message est divisé en blocs de <span class="nowrap">512&nbsp;bits</span>, on applique un <a href="http://fr.wikipedia.org/wiki/Remplissage_%28cryptographie%29" title="Remplissage (cryptographie)">remplissage</a> de manière à avoir un message dont la longueur est un multiple de 512. Le remplissage se présente comme suit&nbsp;:</p>
+<ul>
+<li>on ajoute un '1' à la fin du message</li>
+<li>on ajoute une séquence de '0' (le nombre de zéros dépend de la longueur du remplissage nécessaire)</li>
+<li>on écrit la taille du message, un entier codé sur <span class="nowrap">64&nbsp;bits</span></li>
+</ul>
+<p>Ce remplissage est toujours appliqué, même si la longueur du message peut être divisée par 512. Cette méthode de <span class="lang-en" lang="en"><i>padding</i></span> est semblable à celle utilisée dans la plupart des algorithmes de <span class="lang-en" lang="en"><i>Message Digest</i></span> des familles MD (comme MD5 ou <a href="http://fr.wikipedia.org/wiki/RIPEMD" title="RIPEMD">RIPEMD</a>) ou SHA (<a href="http://fr.wikipedia.org/wiki/SHA-1" title="SHA-1">SHA-1</a> ou <a href="http://fr.wikipedia.org/wiki/SHA-512" title="SHA-512" class="mw-redirect">SHA-512</a>) mais différente de celle de l'algorithme <span class="lang-en" lang="en"><a href="http://fr.wikipedia.org/wiki/Tiger_%28hash%29" title="Tiger (hash)">Tiger</a></span> qui utilise une convention dite <span class="lang-en" lang="en"><a href="http://fr.wikipedia.org/wiki/Little_endian" title="Little endian" class="mw-redirect">Little endian</a></span> d'ordonnancement des bits dans chaque octet.</p>
+<p>La taille du message est codée en <span class="lang-en" lang="en"><a href="http://fr.wikipedia.org/wiki/Little_endian" title="Little endian" class="mw-redirect">Little endian</a></span>. Le message a maintenant une taille en bits multiple de 512, c'est-à-dire qu'il contient un multiple de 16 mots de <span class="nowrap">32&nbsp;bits</span>.</p>
+<h3><span class="mw-headline" id="Boucle_principale">Boucle principale</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=7" title="Modifier la section : Boucle principale" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=7" title="Modifier la section : Boucle principale">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>L'algorithme principal travaille avec un état sur <span class="nowrap">128&nbsp;bits</span>. Il est lui-même divisé en 4 mots de <span class="nowrap">32&nbsp;bits</span>&nbsp;: <i>A</i>, <i>B</i>, <i>C</i> et <i>D</i>.
+ Ils sont initialisés au début avec des constantes. L'algorithme utilise
+ ensuite les blocs provenant du message à hacher, ces blocs vont 
+modifier l'état interne. Les opérations sur un bloc se décomposent en 
+quatre rondes (étapes), elles-mêmes subdivisées en 16 opérations 
+similaires basées sur une fonction non-linéaire <i>F</i> qui varie selon
+ la ronde, une addition et une rotation vers la gauche. Les quatre 
+fonctions non-linéaires disponibles sont&nbsp;:</p>
+<dl>
+<dd><img class="tex" alt="F(B,C,D) = (B\wedge{C}) \vee (\neg{B} \wedge{D})" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/a1f97b3d96c2dbad23a6934bd3c8b4f7.png"></dd>
+<dd><img class="tex" alt="G(B,C,D) = (B\wedge{D}) \vee (C \wedge \neg{D})" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/b85954091cd952602d9fc43f1fd2d559.png"></dd>
+<dd><img class="tex" alt="H(B,C,D) = B \oplus C \oplus D" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/c0eea30d5cf376ccfe484f110144fe28.png"></dd>
+<dd><img class="tex" alt="I(B,C,D) = C \oplus (B \vee \neg{D})" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/810610a6c7dc946c824d6159ac1da577.png"></dd>
+</dl>
+<h2><span class="mw-headline" id="Pseudocode">Pseudocode</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=8" title="Modifier la section : Pseudocode" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=8" title="Modifier la section : Pseudocode">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>MD5 peut s'écrire sous cette forme en <a href="http://fr.wikipedia.org/wiki/Pseudo-code" title="Pseudo-code">pseudo-code</a>.</p>
+<pre>//<i>Note: Toutes les variables sont sur 32 bits</i>
+
+//<i>Définir r comme suit : </i>
+<b>var</b> <i>entier</i>[64] r, k
+r[ 0..15] := {7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22}
+r[16..31] := {5,  9, 14, 20,  5,  9, 14, 20,  5,  9, 14, 20,  5,  9, 14, 20}
+r[32..47] := {4, 11, 16, 23,  4, 11, 16, 23,  4, 11, 16, 23,  4, 11, 16, 23}
+r[48..63] := {6, 10, 15, 21,  6, 10, 15, 21,  6, 10, 15, 21,  6, 10, 15, 21}
+
+//<i>MD5 utilise des sinus d'entiers pour ses constantes:</i>
+<b>pour</b> i <b>de</b> 0 <b>à</b> 63 <b>faire</b>
+    k[i] := floor(abs(sin(i + 1)) × 2^32)
+<b>fin pour</b>
+
+//<i>Préparation des variables:</i>
+<b>var</b> <i>entier</i> h0 := 0x67452301
+<b>var</b> <i>entier</i> h1 := 0xEFCDAB89
+<b>var</b> <i>entier</i> h2 := 0x98BADCFE
+<b>var</b> <i>entier</i> h3 := 0x10325476
+
+//<i>Préparation du message (padding) :</i>
+<b>ajouter</b> le bit "1" <b>au</b> message
+<b>ajouter</b> le bit "0" <b>jusqu'à ce que</b> la taille du message en bits soit égale à 448 (mod 512)
+<b>ajouter</b> la taille du message <b>codée</b> en <i>64-bit little-endian</i> <b>au</b> message
+
+//<i>Découpage en blocs de 512 bits:</i>
+<b>pour chaque</b> <i>bloc</i> de <b>512 bits</b> du message
+    subdiviser en 16 mots de 32 bits en little-endian w[i], 0 ≤ i ≤ 15
+
+    //<i>initialiser les valeurs de hachage:</i>
+    <b>var</b> <i>entier</i> a := h0
+    <b>var</b> <i>entier</i> b := h1
+    <b>var</b> <i>entier</i> c := h2
+    <b>var</b> <i>entier</i> d := h3
+
+    //<i>Boucle principale:</i>
+    <b>pour</b> i <b>de</b> 0 <b>à</b> 63 <b>faire</b>
+        <b>si</b> 0 ≤ i ≤ 15 <b>alors</b>
+              f := (b <b>et</b> c) <b>ou</b> ((<b>non</b> b) <b>et</b> d)
+              g := i
+        <b>sinon si</b> 16 ≤ i ≤ 31 <b>alors</b>
+              f := (d <b>et</b> b) <b>ou</b> ((<b>non</b> d) <b>et</b> c)
+              g := (5×i + 1) <b>mod</b> 16
+        <b>sinon si</b> 32 ≤ i ≤ 47 <b>alors</b>
+              f := b <b>xor</b> c <b>xor</b> d
+              g := (3×i + 5) <b>mod</b> 16
+        <b>sinon si</b> 48 ≤ i ≤ 63 <b>alors</b>
+            f := c <b>xor</b> (b <b>ou</b> (<b>non</b> d))
+            g := (7×i) <b>mod</b> 16
+        <b>fin si</b>
+        <b>var</b> <i>entier</i> temp := d
+        d := c
+        c := b
+        b := ((a + f + k[i] + w[g]) <b>leftrotate</b> r[i]) + b
+        a := temp
+    <b>fin pour</b>
+
+    //<i>ajouter le résultat au bloc précédent:</i>
+    h0 := h0 + a
+    h1 := h1 + b 
+    h2 := h2 + c
+    h3 := h3 + d
+<b>fin pour</b>
+
+<b>var</b> <i>entier</i> empreinte := h0 <b>concaténer</b> h1 <b>concaténer</b> h2 <b>concaténer</b> h3 //<i>(en little-endian)</i>
+</pre>
+<p><br></p>
+<h2><span class="mw-headline" id="Notes_et_r.C3.A9f.C3.A9rences">Notes et références</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=9" title="Modifier la section : Notes et références" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=9" title="Modifier la section : Notes et références">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="references-small decimal" style="column-count:&nbsp;; -moz-column-count:&nbsp;; -webkit-column-count:">
+<div style="font-size: 85%">
+<ol class="references">
+<li id="cite_note-1"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><span class="ouvrage" id="Alexander_Sotirov.2C_Marc_Stevens.2C_Jacob_Appelbaum.2C_Arjen_Lenstra.2C_David_Molnar.2C_Dag_Arne_Osvik.2C_Benne_de_Weger"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> Alexander Sotirov, Marc Stevens, <a href="http://fr.wikipedia.org/wiki/Jacob_Appelbaum" title="Jacob Appelbaum">Jacob Appelbaum</a>, <a href="http://fr.wikipedia.org/wiki/Arjen_Lenstra" title="Arjen Lenstra">Arjen Lenstra</a>, David Molnar, Dag Arne Osvik, Benne de Weger, <a rel="nofollow" class="external text" href="http://www.win.tue.nl/hashclash/rogue-ca/">«&nbsp;<cite style="font-style: normal">Creating a rogue CA certificate</cite>&nbsp;»</a><small class="cachelinks">&nbsp;[<a title="archive de «&nbsp;Creating a rogue CA certificate&nbsp;»" href="http://archive.wikiwix.com/cache/?url=http://www.win.tue.nl/hashclash/rogue-ca/&amp;title=%C2%AB%C2%A0Creating%20a%20rogue%20CA%20certificate%C2%A0%C2%BB">archive</a>]</small>,‎ <span class="nowrap">30 décembre 2008</span></span></span></li>
+<li id="cite_note-pdf-collision-2"><span class="noprint renvois_vers_le_texte">↑ <sup><a href="#cite_ref-pdf-collision_2-0">a</a> et <a href="#cite_ref-pdf-collision_2-1">b</a></sup></span> <span class="reference-text"><span class="ouvrage"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text" href="http://eprint.iacr.org/2004/199.pdf">Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD</a><small class="cachelinks">&nbsp;[<a title="archive de Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD" href="http://archive.wikiwix.com/cache/?url=http://eprint.iacr.org/2004/199.pdf&amp;title=Collisions%20for%20Hash%20Functions%20MD4%2C%20MD5%2C%20HAVAL-128%20and%20RIPEMD">archive</a>]</small> <abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr></span></span></li>
+<li id="cite_note-3"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><span class="ouvrage" id="Wendell_Odom2007">Wendell Odom, <cite class="italique">Préparation à la certification CCNA ICND1 et CCENT&nbsp;: Guide de la préparation officiel Deuxième édition</cite>, <a href="http://fr.wikipedia.org/wiki/Pearson_%28maison_d%27%C3%A9dition%29" title="Pearson (maison d'édition)">PEARSON</a>,‎ 2007, CCIE 1624&nbsp;<abbr class="abbr" title="édition">éd.</abbr>, 662&nbsp;<abbr class="abbr" title="pages">p.</abbr> <small>(<a href="http://fr.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Ouvrages_de_r%C3%A9f%C3%A9rence/978-2-7440-7285-7" title="Spécial:Ouvrages de référence/978-2-7440-7285-7"><span class="nowrap">978-2-7440-7285-7</span></a>)</small>, <abbr class="abbr" title="chapitre(s)">chap.</abbr>&nbsp;9, («&nbsp;Configuration des commutateurs Ethernet&nbsp;»), <abbr class="abbr" title="page(s)">p.</abbr>&nbsp;265<span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Pr%C3%A9paration+%C3%A0+la+certification+CCNA+ICND1+et+CCENT&amp;rft.atitle=Configuration+des+commutateurs+Ethernet&amp;rft.pub=PEARSON&amp;rft.edition=CCIE+1624&amp;rft.stitle=Guide+de+la+pr%C3%A9paration+officiel+Deuxi%C3%A8me+%C3%A9dition&amp;rft.aulast=Wendell+Odom&amp;rft.date=2007&amp;rft.pages=265&amp;rft.tpages=662&amp;rft.isbn=978-2-7440-7285-7&amp;rfr_id=info%3Asid%2Ffr.wikipedia.org%3AMD5" id="COinS_38964"></span></span></span>
+<div style="Margin-top:0.1em&nbsp;;margin-left:2em; line-height:1.5; margin-bottom:0.5em;">à voir en première ligne de la page</div>
+</li>
+<li id="cite_note-4"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><span class="ouvrage"><a rel="nofollow" class="external text" href="http://mdhashtool.mozdev.org/installation.html">mozdev.org - mdhashtool: installation</a><small class="cachelinks">&nbsp;[<a title="archive de mozdev.org - mdhashtool: installation" href="http://archive.wikiwix.com/cache/?url=http://mdhashtool.mozdev.org/installation.html&amp;title=mozdev.org%20-%20mdhashtool%3A%20installation">archive</a>]</small></span></span></li>
+<li id="cite_note-5"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><span class="ouvrage"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text" href="http://eprint.iacr.org/2004/264.pdf">Musings on the Wang etal. MD5 Collision</a><small class="cachelinks">&nbsp;[<a title="archive de Musings on the Wang etal. MD5 Collision" href="http://archive.wikiwix.com/cache/?url=http://eprint.iacr.org/2004/264.pdf&amp;title=Musings%20on%20the%20Wang%20etal.%20MD5%20Collision">archive</a>]</small> <abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr></span></span></li>
+<li id="cite_note-6"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><span class="ouvrage" id="Vlastimil_Klima">Vlastimil Klima, <a rel="nofollow" class="external text" href="http://eprint.iacr.org/2006/105">«&nbsp;<cite style="font-style: normal">Tunnels in Hash Functions: MD5 Collisions Within a Minute, Cryptology ePrint Archive Report 2006/105</cite>&nbsp;»</a><small class="cachelinks">&nbsp;[<a title="archive de «&nbsp;Tunnels in Hash Functions: MD5 Collisions Within a Minute, Cryptology ePrint Archive Report 2006/105&nbsp;»" href="http://archive.wikiwix.com/cache/?url=http://eprint.iacr.org/2006/105&amp;title=%C2%AB%C2%A0Tunnels%20in%20Hash%20Functions%3A%20MD5%20Collisions%20Within%20a%20Minute%2C%20Cryptology%20ePrint%20Archive%20Report%202006%2F105%C2%A0%C2%BB">archive</a>]</small>,‎ <span class="nowrap">17 avril 2006</span></span></span></li>
+<li id="cite_note-7"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><span class="ouvrage"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text" href="http://3.14.by/en/md5">World Fastest MD5 cracker BarsWF</a><small class="cachelinks">&nbsp;[<a title="archive de World Fastest MD5 cracker BarsWF" href="http://archive.wikiwix.com/cache/?url=http://3.14.by/en/md5&amp;title=World%20Fastest%20MD5%20cracker%20BarsWF">archive</a>]</small></span></span></li>
+</ol>
+</div>
+</div>
+<h2><span class="mw-headline" id="Liens_externes">Liens externes</span><span style="direction: ltr;" class="mw-editsection mw-editsection-expanded"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit&amp;section=10" title="Modifier la section : Liens externes" class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit&amp;section=10" title="Modifier la section : Liens externes">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span class="ouvrage"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text" href="http://www.ietf.org/rfc/rfc1321.txt"></a><a href="http://fr.wikipedia.org/wiki/Request_for_comments" title="Request for comments">RFC</a> 1321 qui détaille l'algorithme</span></li>
+<li><span class="ouvrage"><a rel="nofollow" class="external text" href="http://www.authsecu.com/decrypter-dechiffrer-cracker-hash-md5/decrypter-dechiffrer-cracker-hash-md5.php">Fonction de décryptage MD5</a></span></li>
+<li><span class="ouvrage" id="Ondrej_Mikle"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> Ondrej Mikle, <a rel="nofollow" class="external text" href="http://eprint.iacr.org/2004/356">«&nbsp;<cite style="font-style: normal">Practical Attacks on Digital Signatures Using MD5 Message Digest</cite>&nbsp;»</a></span></li>
+<li><span class="ouvrage" id="Vlastimil_Kl.C3.ADma"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> Vlastimil Klíma, <a rel="nofollow" class="external text" href="http://cryptography.hyperlink.cz/md5/MD5_collisions.pdf">«&nbsp;<cite style="font-style: normal">Finding MD5 collisions - A toy for notebook</cite>&nbsp;»</a> <abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr></span></li>
+<li><span class="ouvrage" id="P._Hawkes_et_al."><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> P. Hawkes <i>et al.</i>, <a rel="nofollow" class="external text" href="http://eprint.iacr.org/2004/264.pdf">«&nbsp;<cite style="font-style: normal">Musings on the Wang et al. - MD5 Collision</cite>&nbsp;»</a> <abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr></span></li>
+</ul>
+<div style="clear:both;"></div>
+<div class="navbox_group">
+<table id="collapsibleTable0" class="navbox collapsible noprint autocollapse" style="margin:auto;">
+<tbody><tr>
+<th colspan="2" style="text-align:center;"><span class="navboxToggle">&nbsp;<a href="javascript:;" id="collapseButton0">[masquer]</a></span>
+<div style="float:left; width:6em; text-align:left">
+<div class="noprint plainlinksneverexpand nowrap tnavbar" style="background-color:transparent; padding:0; font-size:xx-small; color:#000000;"><a href="http://fr.wikipedia.org/wiki/Mod%C3%A8le:Palette_Fonctions_de_hachage_cryptographiques" title="Modèle:Palette Fonctions de hachage cryptographiques"><abbr class="abbr" title="Voir ce modèle.">v</abbr></a>&nbsp;· <a href="http://fr.wikipedia.org/w/index.php?title=Discussion_mod%C3%A8le:Palette_Fonctions_de_hachage_cryptographiques&amp;action=edit&amp;redlink=1" class="new" title="Discussion modèle:Palette Fonctions de hachage cryptographiques (page inexistante)"><abbr class="abbr" style="color:#002bb8;" title="Discussion sur ce modèle.">d</abbr></a>&nbsp;· <a class="external text" href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Palette_Fonctions_de_hachage_cryptographiques&amp;action=edit"><abbr class="abbr" title="Modifier ce modèle. Merci de prévisualiser avant de sauvegarder.">m</abbr></a></div>
+</div>
+<span style="font-size:110%"><a href="http://fr.wikipedia.org/wiki/Fonction_de_hachage" title="Fonction de hachage">Fonctions de hachage cryptographiques</a></span></th>
+</tr>
+<tr>
+<td class="group" style="">Algorithmes</td>
+<td class="list" style=""><span class="nowrap"><a href="http://fr.wikipedia.org/wiki/APR1" title="APR1">APR1</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/w/index.php?title=AR_%28hash%29&amp;action=edit&amp;redlink=1" class="new" title="AR (hash) (page inexistante)">AR</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Boognish" title="Boognish">Boognish</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/FFT-hash" title="FFT-hash">FFT-hash</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/HAS-160" title="HAS-160">HAS-160</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Haval" title="Haval">Haval</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/MD2" title="MD2">MD2</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/MD4" title="MD4">MD4</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><strong class="selflink">MD5</strong> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/MD6" title="MD6">MD6</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/N-hash" title="N-hash">N-hash</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/PANAMA" title="PANAMA">PANAMA</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/RIPEMD" title="RIPEMD">RIPEMD</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/RIPEMD-128" title="RIPEMD-128">RIPEMD-128</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/RIPEMD-160" title="RIPEMD-160">RIPEMD-160</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/RIPEMD-256" title="RIPEMD-256">RIPEMD-256</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/SHA-0" title="SHA-0">SHA-0</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/SHA-1" title="SHA-1">SHA-1</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/SHA-2" title="SHA-2">SHA-2</a> (SHA-224 <span style="font-weight:bold">·</span></span> <span class="nowrap">SHA-256 <span style="font-weight:bold">·</span></span> <span class="nowrap">SHA-384 <span style="font-weight:bold">·</span></span> <span class="nowrap">SHA-512) <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/SHA-3" title="SHA-3">SHA-3</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Snefru" title="Snefru">Snefru</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/StepRightUp" title="StepRightUp">StepRightUp</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Tiger_%28hash%29" title="Tiger (hash)">Tiger</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/VSH" title="VSH">VSH</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Whirlpool_%28algorithme%29" title="Whirlpool (algorithme)">Whirlpool</a></span></td>
+</tr>
+<tr>
+<td class="group" style="">Cryptanalyse</td>
+<td class="list even" style=""><span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Paradoxe_des_anniversaires" title="Paradoxe des anniversaires">Paradoxe des anniversaires</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Cryptanalyse_lin%C3%A9aire" title="Cryptanalyse linéaire">Linéaire</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Cryptanalyse_diff%C3%A9rentielle" title="Cryptanalyse différentielle">Différentielle</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Attaque_par_force_brute" title="Attaque par force brute">Attaque par force brute</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Effet_avalanche" title="Effet avalanche">Effet avalanche</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Pseudo-collision" title="Pseudo-collision">Pseudo-collision</a></span></td>
+</tr>
+<tr>
+<td class="group" style="">Architecture</td>
+<td class="list" style=""><span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Remplissage_%28cryptographie%29" title="Remplissage (cryptographie)">Remplissage</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Fonction_de_compression" title="Fonction de compression">Fonction de compression</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Construction_de_Merkle-Damg%C3%A5rd" title="Construction de Merkle-Damgård">Construction de Merkle-Damgård</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Construction_de_Miyaguchi-Preneel" title="Construction de Miyaguchi-Preneel">Construction de Miyaguchi-Preneel</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Construction_de_Matyas-Meyer-Oseas" title="Construction de Matyas-Meyer-Oseas">Construction de Matyas-Meyer-Oseas</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Construction_de_Davies-Meyer" title="Construction de Davies-Meyer">Construction de Davies-Meyer</a> <span style="font-weight:bold">·</span></span> <span class="nowrap"><a href="http://fr.wikipedia.org/wiki/Fonction_%C3%A9ponge" title="Fonction éponge">Construction de l'éponge</a></span></td>
+</tr>
+</tbody></table>
+</div>
+<ul id="bandeau-portail" class="bandeau-portail">
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:Cryptologie" title="Portail de la cryptologie"><img alt="Portail de la cryptologie" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/46px-Crypto_key.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Crypto_key.png/68px-Crypto_key.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Crypto_key.png/91px-Crypto_key.png 2x" height="24" width="46"></a></span> <span class="bandeau-portail-texte"><a href="http://fr.wikipedia.org/wiki/Portail:Cryptologie" title="Portail:Cryptologie">Portail de la cryptologie</a></span></span></li>
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:S%C3%A9curit%C3%A9_informatique" title="Portail de la sécurité informatique"><img alt="Portail de la sécurité informatique" src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/24px-Nuvola_apps_kgpg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_kgpg.png/36px-Nuvola_apps_kgpg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_kgpg.png/48px-Nuvola_apps_kgpg.png 2x" height="24" width="24"></a></span> <span class="bandeau-portail-texte"><a href="http://fr.wikipedia.org/wiki/Portail:S%C3%A9curit%C3%A9_informatique" title="Portail:Sécurité informatique">Portail de la sécurité informatique</a></span></span></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1209
+CPU time usage: 0.668 seconds
+Real time usage: 0.744 seconds
+Preprocessor visited node count: 3671/1000000
+Preprocessor generated node count: 33111/1500000
+Post‐expand include size: 56346/2048000 bytes
+Template argument size: 12971/2048000 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/500
+Lua time usage: 0.085/10.000 seconds
+Lua memory usage: 2.08 MB/50 MB
+-->
+
+<!-- Saved in parser cache with key frwiki:pcache:idhash:1943-0!*!0!!fr!4!*!math=0 and timestamp 20140306155333
+ -->
+<noscript><img src="//fr.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>								<div class="printfooter">
+				Ce document provient de « <a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;oldid=101841514">http://fr.wikipedia.org/w/index.php?title=MD5&amp;oldid=101841514</a> ».				</div>
+												<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Accueil" title="Catégorie:Accueil">Catégorie</a>&nbsp;: <ul><li><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_de_hachage" title="Catégorie:Algorithme de hachage">Algorithme de hachage</a></li></ul> | <a style="cursor: pointer; color: black;" title="Cet article contient des catégories cachées" id="mw-hidden-cats-link">[+]</a></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Catégories cachées&nbsp;: <ul><li><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Portail:Cryptologie/Articles_li%C3%A9s" title="Catégorie:Portail:Cryptologie/Articles liés">Portail:Cryptologie/Articles liés</a></li><li><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Portail:S%C3%A9curit%C3%A9_informatique/Articles_li%C3%A9s" title="Catégorie:Portail:Sécurité informatique/Articles liés">Portail:Sécurité informatique/Articles liés</a></li><li><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Portail:Informatique/Articles_li%C3%A9s" title="Catégorie:Portail:Informatique/Articles liés">Portail:Informatique/Articles liés</a></li><li><a href="http://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Portail:S%C3%A9curit%C3%A9_de_l%27information/Articles_li%C3%A9s" title="Catégorie:Portail:Sécurité de l'information/Articles liés">Portail:Sécurité de l'information/Articles liés</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Outils personnels</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Connexion&amp;returnto=MD5&amp;type=signup">Créer un compte</a></li><li id="pt-login"><a href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Connexion&amp;returnto=MD5" title="Vous êtes encouragé(e) à vous identifier ; ce n'est cependant pas obligatoire. [alt-shift-o]" accesskey="o">Connexion</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Espaces de noms</h3>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://fr.wikipedia.org/wiki/MD5" title="Voir la page de contenu [alt-shift-c]" accesskey="c">Article</a></span></li>
+					<li id="ca-talk"><span><a href="http://fr.wikipedia.org/wiki/Discussion:MD5" title="Discussion au sujet de cette page de contenu [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 tabindex="0" id="p-variants-label"><span>Variantes</span><a tabindex="-1" href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Affichages</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://fr.wikipedia.org/wiki/MD5">Lire</a></span></li>
+					<li id="ca-ve-edit"><span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;veaction=edit" title="Modifier cette page avec l'ÉditeurVisuel [alt-shift-v]" accesskey="v">Modifier</a></span></li>
+					<li id="ca-edit"><span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=edit" title="Vous pouvez modifier cette page ! [alt-shift-e]" accesskey="e">Modifier le code</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=history" title="Les versions passées de cette page (avec leurs contributeurs) [alt-shift-h]" accesskey="h">Afficher l'historique</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 tabindex="0" id="p-cactions-label"><span>Actions</span><a tabindex="-1" href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Rechercher</label></h3>
+	<form action="/w/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input autocomplete="off" tabindex="1" name="search" placeholder="Rechercher" title="Rechercher dans Wikipédia [alt-shift-f]" accesskey="f" id="searchInput" type="search"><input value="Spécial:Recherche" name="title" type="hidden"><input name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton" type="submit">		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div class="collapsible-nav" id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(//upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png);" href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" title="Page principale"></a></div>
+				<div class="portal first persistent" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+	<h3 id="p-navigation-label">Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" title="Aller à l'accueil [alt-shift-z]" accesskey="z">Accueil</a></li>
+			<li id="n-thema"><a href="http://fr.wikipedia.org/wiki/Portail:Accueil">Portails thématiques</a></li>
+			<li id="n-alphindex"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Toutes_les_pages">Index alphabétique</a></li>
+			<li id="n-randompage"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Page_au_hasard" title="Affiche un article au hasard [alt-shift-x]" accesskey="x">Article au hasard</a></li>
+			<li id="n-contact"><a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Contact">Contact</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal expanded" role="navigation" id="p-Contribuer" aria-labelledby="p-Contribuer-label">
+	<h3 tabindex="2" id="p-Contribuer-label"><a aria-expanded="true" aria-pressed="true" role="button" aria-controls="p-Contribuer-list" aria-haspopup="true" href="#">Contribuer</a></h3>
+	<div style="display: block;" class="body">
+		<ul id="p-Contribuer-list">
+			<li id="n-aboutwp"><a href="http://fr.wikipedia.org/wiki/Aide:D%C3%A9buter">Débuter sur Wikipédia</a></li>
+			<li id="n-help"><a href="http://fr.wikipedia.org/wiki/Aide:Sommaire" title="Aide">Aide</a></li>
+			<li id="n-portal"><a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_de_la_communaut%C3%A9" title="À propos du projet">Communauté</a></li>
+			<li id="n-recentchanges"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Modifications_r%C3%A9centes" title="Liste des modifications récentes sur le wiki [alt-shift-r]" accesskey="r">Modifications récentes</a></li>
+			<li id="n-sitesupport"><a href="http://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_fr.wikipedia.org&amp;uselang=fr" title="Aidez-nous">Faire un don</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal collapsed" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+	<h3 tabindex="3" id="p-coll-print_export-label"><a aria-expanded="false" aria-pressed="false" role="button" aria-controls="p-coll-print_export-list" aria-haspopup="true" href="#">Imprimer / exporter</a></h3>
+	<div class="body">
+		<ul id="p-coll-print_export-list">
+			<li id="coll-create_a_book"><a href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Livre&amp;bookcmd=book_creator&amp;referer=MD5">Créer un livre</a></li>
+			<li id="coll-download-as-rl"><a href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Livre&amp;bookcmd=render_article&amp;arttitle=MD5&amp;oldid=101841514&amp;writer=rl">Télécharger comme PDF</a></li>
+			<li id="t-print"><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;printable=yes" title="Version imprimable de cette page [alt-shift-p]" accesskey="p">Version imprimable</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal collapsed" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+	<h3 tabindex="4" id="p-tb-label"><a aria-expanded="false" aria-pressed="false" role="button" aria-controls="p-tb-list" aria-haspopup="true" href="#">Outils</a></h3>
+	<div class="body">
+		<ul id="p-tb-list">
+			<li id="t-whatlinkshere"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Pages_li%C3%A9es/MD5" title="Liste des pages liées à celle-ci [alt-shift-j]" accesskey="j">Pages liées</a></li>
+			<li id="t-recentchangeslinked"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Suivi_des_liens/MD5" title="Liste des modifications récentes des pages liées à celle-ci [alt-shift-k]" accesskey="k">Suivi des pages liées</a></li>
+			<li id="t-upload"><a href="http://fr.wikipedia.org/wiki/Aide:Importer_un_fichier" title="Envoyer une image ou fichier média sur le serveur [alt-shift-u]" accesskey="u">Importer un fichier</a></li>
+			<li id="t-specialpages"><a href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Pages_sp%C3%A9ciales" title="Liste de toutes les pages spéciales [alt-shift-q]" accesskey="q">Pages spéciales</a></li>
+			<li id="t-permalink"><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;oldid=101841514" title="Lien permanent vers cette version de la page">Adresse de cette version</a></li>
+			<li id="t-info"><a href="http://fr.wikipedia.org/w/index.php?title=MD5&amp;action=info">Information sur la page</a></li>
+			<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q185235" title="Lien vers l’élément de référentiel des données connectées [alt-shift-g]" accesskey="g">Élément sur Wikidata</a></li>
+<li id="t-cite"><a href="http://fr.wikipedia.org/w/index.php?title=Sp%C3%A9cial:Citer&amp;page=MD5&amp;id=101841514" title="Informations sur comment citer cette page">Citer cette page</a></li>		</ul>
+	</div>
+</div>
+<div class="portal expanded" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span aria-haspopup="true" role="button" tabindex="0" title="Paramètres de langue" class="uls-settings-trigger"></span>
+	<h3 tabindex="5" id="p-lang-label"><a aria-expanded="true" aria-pressed="true" role="button" aria-controls="p-lang-list" aria-haspopup="true" href="#">Autres langues</a></h3>
+	<div style="display: block;" class="body">
+		<ul id="p-lang-list">
+			<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%A5%D9%85_%D8%AF%D9%8A5" title="إم دي5 — arabe" hreflang="ar" lang="ar">العربية</a></li>
+			<li class="interlanguage-link interwiki-bg"><a href="http://bg.wikipedia.org/wiki/MD5" title="MD5 — bulgare" hreflang="bg" lang="bg">Български</a></li>
+			<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/MD5" title="MD5 — catalan" hreflang="ca" lang="ca">Català</a></li>
+			<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Message-Digest_algorithm" title="Message-Digest algorithm — tchèque" hreflang="cs" lang="cs">Čeština</a></li>
+			<li class="interlanguage-link interwiki-da"><a href="http://da.wikipedia.org/wiki/MD5" title="MD5 — danois" hreflang="da" lang="da">Dansk</a></li>
+			<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5" title="Message-Digest Algorithm 5 — allemand" hreflang="de" lang="de">Deutsch</a></li>
+			<li class="interlanguage-link interwiki-en"><a href="http://en.wikipedia.org/wiki/MD5" title="MD5 — anglais" hreflang="en" lang="en">English</a></li>
+			<li class="interlanguage-link interwiki-eo"><a href="http://eo.wikipedia.org/wiki/MD5" title="MD5 — espéranto" hreflang="eo" lang="eo">Esperanto</a></li>
+			<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/MD5" title="MD5 — espagnol" hreflang="es" lang="es">Español</a></li>
+			<li class="interlanguage-link interwiki-eu"><a href="http://eu.wikipedia.org/wiki/MD5" title="MD5 — basque" hreflang="eu" lang="eu">Euskara</a></li>
+			<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D8%A7%D9%85%E2%80%8C%D8%AF%DB%8C%DB%B5" title="ام‌دی۵ — persan" hreflang="fa" lang="fa">فارسی</a></li>
+			<li class="interlanguage-link interwiki-fi"><a href="http://fi.wikipedia.org/wiki/MD5" title="MD5 — finnois" hreflang="fi" lang="fi">Suomi</a></li>
+			<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/MD5" title="MD5 — hébreu" hreflang="he" lang="he">עברית</a></li>
+			<li class="interlanguage-link interwiki-hr"><a href="http://hr.wikipedia.org/wiki/MD5" title="MD5 — croate" hreflang="hr" lang="hr">Hrvatski</a></li>
+			<li class="interlanguage-link interwiki-hu"><a href="http://hu.wikipedia.org/wiki/MD5" title="MD5 — hongrois" hreflang="hu" lang="hu">Magyar</a></li>
+			<li class="interlanguage-link interwiki-hy"><a href="http://hy.wikipedia.org/wiki/MD5" title="MD5 — arménien" hreflang="hy" lang="hy">Հայերեն</a></li>
+			<li class="interlanguage-link interwiki-id"><a href="http://id.wikipedia.org/wiki/MD5" title="MD5 — indonésien" hreflang="id" lang="id">Bahasa Indonesia</a></li>
+			<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/MD5" title="MD5 — italien" hreflang="it" lang="it">Italiano</a></li>
+			<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/MD5" title="MD5 — japonais" hreflang="ja" lang="ja">日本語</a></li>
+			<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/MD5" title="MD5 — coréen" hreflang="ko" lang="ko">한국어</a></li>
+			<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/MD5" title="MD5 — lituanien" hreflang="lt" lang="lt">Lietuvių</a></li>
+			<li class="interlanguage-link interwiki-ml"><a href="http://ml.wikipedia.org/wiki/MD5" title="MD5 — malayalam" hreflang="ml" lang="ml">മലയാളം</a></li>
+			<li class="interlanguage-link interwiki-ms"><a href="http://ms.wikipedia.org/wiki/MD5" title="MD5 — malais" hreflang="ms" lang="ms">Bahasa Melayu</a></li>
+			<li class="interlanguage-link interwiki-nl"><a href="http://nl.wikipedia.org/wiki/MD5" title="MD5 — néerlandais" hreflang="nl" lang="nl">Nederlands</a></li>
+			<li class="interlanguage-link interwiki-no"><a href="http://no.wikipedia.org/wiki/MD5" title="MD5 — norvégien" hreflang="no" lang="no">Norsk bokmål</a></li>
+			<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/MD5" title="MD5 — polonais" hreflang="pl" lang="pl">Polski</a></li>
+			<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/MD5" title="MD5 — portugais" hreflang="pt" lang="pt">Português</a></li>
+			<li class="interlanguage-link interwiki-ro"><a href="http://ro.wikipedia.org/wiki/MD5" title="MD5 — roumain" hreflang="ro" lang="ro">Română</a></li>
+			<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/MD5" title="MD5 — russe" hreflang="ru" lang="ru">Русский</a></li>
+			<li class="interlanguage-link interwiki-simple"><a href="http://simple.wikipedia.org/wiki/MD5" title="MD5 — Simple English" hreflang="simple" lang="simple">Simple English</a></li>
+			<li class="interlanguage-link interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Message-Digest_algorithm" title="Message-Digest algorithm — slovaque" hreflang="sk" lang="sk">Slovenčina</a></li>
+			<li class="interlanguage-link interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Algoritem_MD5" title="Algoritem MD5 — slovène" hreflang="sl" lang="sl">Slovenščina</a></li>
+			<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/MD5" title="MD5 — serbe" hreflang="sr" lang="sr">Српски / srpski</a></li>
+			<li class="interlanguage-link interwiki-sv"><a href="http://sv.wikipedia.org/wiki/MD5" title="MD5 — suédois" hreflang="sv" lang="sv">Svenska</a></li>
+			<li class="interlanguage-link interwiki-tg"><a href="http://tg.wikipedia.org/wiki/MD5" title="MD5 — tadjik" hreflang="tg" lang="tg">Тоҷикӣ</a></li>
+			<li class="interlanguage-link interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%A1%E0%B8%94%E0%B8%B55" title="เอ็มดี5 — thaï" hreflang="th" lang="th">ไทย</a></li>
+			<li class="interlanguage-link interwiki-tr"><a href="http://tr.wikipedia.org/wiki/MD5" title="MD5 — turc" hreflang="tr" lang="tr">Türkçe</a></li>
+			<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/MD5" title="MD5 — ukrainien" hreflang="uk" lang="uk">Українська</a></li>
+			<li class="interlanguage-link interwiki-vi"><a href="http://vi.wikipedia.org/wiki/MD5" title="MD5 — vietnamien" hreflang="vi" lang="vi">Tiếng Việt</a></li>
+			<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/MD5" title="MD5 — chinois" hreflang="zh" lang="zh">中文</a></li>
+			
+			<li class="wbc-editpage"><a href="http://www.wikidata.org/wiki/Q185235#sitelinks-wikipedia" title="Modifier les liens interlangue">Modifier les liens</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Dernière modification de cette page le 6 mars 2014 à 16:53.<br></li>
+											<li id="footer-info-copyright"><span style="white-space: normal"><a class="internal" href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Citation_et_r%C3%A9utilisation_du_contenu_de_Wikip%C3%A9dia" title="Droit d'auteur">Droit d'auteur</a> : les textes sont disponibles sous <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" title="Licence Creative Commons paternité partage des conditions initiales à l’identique 3.0 unported">licence Creative Commons paternité partage à l’identique</a> ; d’autres conditions peuvent s’appliquer. Voyez les <a href="http://wikimediafoundation.org/wiki/Conditions_d%27utilisation" title="Conditions d’utilisation de la Wikimedia Foundation">conditions d’utilisation</a> pour plus de détails, ainsi que les <a class="internal" href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Cr%C3%A9dits_graphiques" title="Droit d'auteur de certaines icônes">crédits graphiques</a>. En cas de réutilisation des textes de cette page, voyez <a class="internal" href="http://fr.wikipedia.org/wiki/Sp%C3%A9cial:Citer/MD5" title="Citer ou réutiliser cette page">comment citer les auteurs et mentionner la licence</a>.<br>
+Wikipedia® est une marque déposée de la <a href="http://wikimediafoundation.org/wiki/Accueil" title="Wikimedia Foundation">Wikimedia Foundation, Inc.</a>, organisation de bienfaisance régie par le paragraphe <a class="internal" href="http://fr.wikipedia.org/wiki/501c" title="501c">501(c)(3)</a> du code fiscal des États-Unis.</span><br></li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Politique_de_confidentialit%C3%A9" title="wikimedia:Politique de confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:%C3%80_propos" title="Wikipédia:À propos">À propos de Wikipédia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Avertissements_g%C3%A9n%C3%A9raux" title="Wikipédia:Avertissements généraux">Avertissements</a></li>
+											<li id="footer-places-developers"><a class="external" href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Développeurs</a></li>
+											<li id="footer-places-mobileview"><a href="http://fr.m.wikipedia.org/wiki/MD5" class="noprint stopMobileRedirectToggle">Version mobile</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.newCollapsible","ext.gadget.WikiMiniAtlas","ext.gadget.MonobookToolbarStandard","mw.MwEmbedSupport.style","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="MD5%20%E2%80%94%20Wikip%C3%A9dia_fichiers/load_004.php"></script><div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div>
+<!-- Served by mw1041 in 0.291 secs. -->
+	
+
+</body></html>

@@ -1,0 +1,104 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <stdio.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+
+#define PORT 2001
+
+
+#define TRUE 1
+#define FALSE 0
+#define SIZE_BLOCK 8
+
+
+unsigned char bonjour[1] = {0x01};
+unsigned char aurevoir[1] = {0x00};
+
+int addrlen;
+struct sockaddr_in service ;  /* pour coder l'adresse du service */ 
+int sockd;
+
+int ouvre_oracle(char *hote){
+
+  sockd  = socket(PF_INET,SOCK_STREAM,0) ;
+
+  if(sockd==-1){
+    perror("Erreur lors de la cr\\'eation d'une socket\n") ;
+    return -1 ;
+  }
+
+
+
+  service.sin_family = AF_INET ; /* c'est  la seule famille qui existe
+        pour l'instant */
+
+  service.sin_port = htons(PORT) ; /* Apr\`es   avoir   v\'erifier   dans  le
+          fichier  /etc/services que ce  num\'ero
+          est libre */ 
+
+  struct hostent *infohote = gethostbyname(hote) ;
+
+  if(infohote==NULL){
+    perror("Impossible de r\\'ecup\\'erer un num\\'ero IP");
+    return -1 ;
+  }
+
+  memcpy(&service.sin_addr, infohote->h_addr_list[0],infohote->h_length) ;
+
+  addrlen = sizeof(service) ;
+
+  int res = connect(sockd, (struct sockaddr *) &service, sizeof(service)) ; 
+
+   if(res<0){
+     perror("Erreur lors de l'adressage de la prise") ;
+     close(sockd) ;
+     return -1 ;
+   } 
+
+   unsigned char tmp ;
+   /* recevoir confirmation connexion */
+   recvfrom(sockd,&tmp,1, 0, (struct sockaddr *) &service,  &addrlen); 
+
+   if(tmp!=TRUE){    
+     return 2 ; 
+   } 
+
+
+  return 0;
+}
+ 
+int ferme_oracle(void)
+{
+  sendto(sockd, aurevoir, sizeof(char), 0, (struct sockaddr *) &service, addrlen);
+  return close(sockd) ;
+}
+
+int interroge_oracle(char *msg){
+  unsigned char tmp;
+  int status,i;
+
+printf("send1\n");  
+  sendto(sockd, bonjour, sizeof(char), 0, (struct sockaddr *) &service, addrlen);
+printf("send2 : .%s.\n",msg);
+for (i=0; i<SIZE_BLOCK*2; i++)
+    printf("%02x",msg[i]);
+    printf("\n");
+  sendto(sockd, msg, 2*SIZE_BLOCK, 0, (struct sockaddr *) &service, addrlen);
+printf("rcv1\n"); 
+  recvfrom(sockd,&tmp, sizeof(char), 0, (struct sockaddr *) &service,  &addrlen); 
+
+/* la reponse du serveur   
+	#define TRUE 1
+	#define FALSE 0
+  dans tmp
+*/
+  
+  return (int) tmp ;
+}
+
+
+

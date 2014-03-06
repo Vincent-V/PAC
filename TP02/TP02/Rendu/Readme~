@@ -1,0 +1,23 @@
+-- TP2 PAC : Chiffrements par blocs --
+-- Binome : Vidal Vincent & Motuelle Romain --
+
+Ex1.
+
+Q2. Le chiffré est dans mon cas 4 fois plus grand. C'est le bourrage qui conduit à cela.
+
+Q3. oppenSSL nous informe que le mot de passe est erroné (bad decrypt)
+
+Ex2.
+
+Q1. Le mot de passe est "ComTesse"
+
+Q2. Cryptogram10 déchiffré : "les masses d'air sont souvent secouées par de vives perturbations"
+
+Ex3.
+
+Q3. Le xor des clairs et le xor des chiffrés sont identiques. Oui le résultat aurait été le même avec d'autres systèmes de chiffrement. En effet c'est le mode OFB qui conduit à cela.
+
+Ex7. (Attaque)
+
+En modifiant le fichier attaque.c, nous sommes capable de décrypter les 2 blocs du cryptogram11.
+Cependant le serveur en "a12p26.fil.univ-lille1.fr" ne semble plus être actif. Il était donc impossible d'obtenir la bonne clé pour décrypter le cryptogram12.

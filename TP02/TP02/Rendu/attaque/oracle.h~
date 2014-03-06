@@ -1,0 +1,9 @@
+#define ORACLE "a12p26.fil.univ-lille1.fr"
+//#define ORACLE "localhost"
+
+
+int ouvre_oracle(char *hote);
+
+int ferme_oracle(void);
+
+int interroge_oracle(char *msg);
